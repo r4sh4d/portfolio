@@ -1,0 +1,136 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 4564 >>
+stream
+BT
+/F1 18 Tf
+72 760 Td
+(Rashad Murshudov) Tj
+/F1 11 Tf
+0 -20 Td
+(Senior Frontend Engineer • Baku, Azerbaijan • rashad.murshudov@hotmail.com • +994 55 777 7273) Tj
+0 -14 Td
+(GitHub: github.com/rashadmurshudov • LinkedIn: linkedin.com/in/rashadmurshudov) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(SUMMARY) Tj
+0 -14 Td
+(Product-focused frontend lead with 7+ years helping banks, marketplaces, and SaaS teams ship reliable web and mobile experiences. Expert in React/Next.js and React Native, comfortable modernizing legacy stacks, aligning UX with compliance, and mentoring teams for faster releases and higher quality.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(CORE CAPABILITIES) Tj
+0 -14 Td
+(• Languages & Frameworks: JavaScript \(ES6+\), TypeScript, React, React Native, Next.js, Node.js, NestJS, GraphQL, REST) Tj
+0 -14 Td
+(• Architecture & Platforms: Micro frontends, design systems, modular monorepos, WebSockets, SSR/ISR, CI/CD \(GitLab, Azure DevOps\)) Tj
+0 -14 Td
+(• Tooling & Testing: Redux Toolkit, React Query, Zustand, Jest, Testing Library, Storybook, Cypress, Docker, Traefik, Nginx) Tj
+0 -14 Td
+(• UI & Styling: Tailwind CSS, SCSS, Material UI, Ant Design, Motion/animation libraries) Tj
+0 -14 Td
+(• Datastores: PostgreSQL, MongoDB, TypeORM) Tj
+0 -14 Td
+(• Ways of Working: Accessibility, Clean Architecture, Agile delivery, cross-functional collaboration, stakeholder demos) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(EXPERIENCE) Tj
+0 -14 Td
+(Peoples Trust — Senior Frontend Developer \(Feb 2022 – Jun 2025\)) Tj
+0 -14 Td
+(• Led frontend rebuild of PayPower prepaid ecosystem \(web + React Native\), improving onboarding funnel, redesigning dashboards, and sustaining 99.9% uptime for 100K+ cardholders.) Tj
+0 -14 Td
+(• Introduced component library + design tokens shared across client and admin portals, reducing release time by 30% and aligning with PCI/KYC flows.) Tj
+0 -14 Td
+(• Balanced legacy maintenance with modern architecture: migrated Redux sagas to RTK Query, added automated visual regression tests, and drove accessibility audits.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Morpho — Frontend Team Lead \(Jun 2020 – Jan 2022\)) Tj
+0 -14 Td
+(• Managed a distributed squad delivering CRM, logistics, and mobile banking apps across React and React Native stacks.) Tj
+0 -14 Td
+(• Defined coding standards, CI pipelines, and code-review rituals that cut bug backlog by 45% and boosted sprint predictability.) Tj
+0 -14 Td
+(• Partnered with clients to scope solutions, built PoCs for WebSocket chat, push notifications, and offline-first features before production rollout.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(THE Lobby — Frontend Developer \(Sep 2019 – Mar 2020\)) Tj
+0 -14 Td
+(• Built premium social network experience with Matrix-protocol messaging, encrypted profiles, and Stripe-powered events marketplace.) Tj
+0 -14 Td
+(• Authored full design system with light/dark theming, dramatically speeding up feature delivery and ensuring visual consistency across 50+ screens.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Staffy LLC — Frontend Developer \(Feb 2019 – Aug 2019\)) Tj
+0 -14 Td
+(• Developed modular HR platform covering hiring funnels, analytics, and subscription billing; implemented reusable components and localization support.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Freelance Mobile Engineer \(Oct 2018 – Jan 2019\)) Tj
+0 -14 Td
+(• Delivered blockchain-backed messenger with integrated commerce using React Native + Expo and .NET Core services.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Pronet LLC — Junior Frontend Developer \(Jan 2018 – Sep 2018\)) Tj
+0 -14 Td
+(• Built and maintained internal portal tooling, gaining foundational expertise in CSS architecture and CI automation.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(HIGHLIGHT PROJECTS) Tj
+0 -14 Td
+(• PayPower Fintech Suite — Multi-platform prepaid banking experience with instant reloads, FATCA/KYC workflows, and wallet integrations.) Tj
+0 -14 Td
+(• Staffy Recruitment OS — Three-sided marketplace with advanced search, messaging, and payments for employers, talent, and admins.) Tj
+0 -14 Td
+(• Tutor.az Learning Marketplace — Matching students to tutors with scheduling, payments, and video integrations.) Tj
+0 -14 Td
+(• Yunik B2B Commerce — Uniform procurement platform with custom order flows, analytics, and corporate billing.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(EDUCATION) Tj
+0 -14 Td
+(Baku State University — Bachelor of Science, Computer Science \(2017 – 2021\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(INTERESTS) Tj
+0 -14 Td
+(Travel, gaming, motorsports, and exploring emerging fintech products.) Tj
+0 -14 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+4927
+%%EOF
