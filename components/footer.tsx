@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Config } from "@/config";
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 
 const navLinks = [
   { label: "Education", href: "#education" },
@@ -16,30 +17,12 @@ const socialLinks = [
   {
     label: "GitHub",
     href: Config.footer.githubUrl,
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-5 w-5"
-        fill="currentColor"
-      >
-        <path d="M12 .5C5.649.5.5 5.734.5 12.227c0 5.177 3.438 9.569 8.207 11.123.6.116.82-.268.82-.593 0-.293-.01-1.07-.017-2.1-3.338.75-4.042-1.66-4.042-1.66-.546-1.43-1.335-1.813-1.335-1.813-1.09-.77.083-.755.083-.755 1.204.086 1.838 1.277 1.838 1.277 1.073 1.913 2.815 1.36 3.5 1.04.11-.8.42-1.36.763-1.672-2.664-.31-5.466-1.384-5.466-6.16 0-1.36.465-2.472 1.235-3.344-.124-.312-.536-1.563.117-3.259 0 0 1.01-.333 3.31 1.276A11.078 11.078 0 0 1 12 5.8c1.02.005 2.046.14 3.005.41 2.3-1.61 3.31-1.276 3.31-1.276.655 1.696.243 2.947.12 3.259.772.872 1.233 1.984 1.233 3.344 0 4.788-2.807 5.846-5.48 6.15.431.386.816 1.143.816 2.301 0 1.661-.015 3-.015 3.413 0 .327.216.714.825.592 4.764-1.559 8.2-5.95 8.2-11.123C23.5 5.733 18.351.5 12 .5Z" />
-      </svg>
-    ),
+    icon: <IconBrandGithub />,
   },
   {
     label: "LinkedIn",
     href: Config.footer.linkedInUrl,
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-5 w-5"
-        fill="currentColor"
-      >
-        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.24 8.32h4.51V22.5H.24zM7.53 8.32h4.32v1.93h.06c.6-1.14 2.08-2.35 4.28-2.35 4.57 0 5.42 3 5.42 6.9V22.5h-4.5v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.69-2.49 3.44v6.6h-4.5z" />
-      </svg>
-    ),
+    icon: <IconBrandLinkedin size={24} stroke={1.5} />,
   },
 ];
 

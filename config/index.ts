@@ -2,8 +2,9 @@ export const Config = {
   hero: {
     greeting: "Hello there 👋",
     name: "I'm Rashad",
+    role: "Senior Frontend Developer",
     description:
-      "A Senior Frontend Developer with 7+ years specializing in React, TypeScript, and Next.js across web and mobile platforms. I architect scalable applications that perform under pressure and deliver measurable impact—whether optimizing critical rendering paths, building real-time fintech features, or leading technical migrations. Known for rapid execution, systematic debugging, and designing robust frontend systems that teams can build on. I translate complex requirements into clean, maintainable code that users love and engineers trust.",
+      "With 7+ years specializing in React, Next.js, TypeScript and React Native across web and mobile platforms, I architect scalable applications that perform under pressure and deliver measurable impact—whether optimizing critical rendering paths, building real-time fintech features, or leading technical migrations. Known for rapid execution, systematic debugging, and designing robust frontend systems that teams can build on. I translate complex requirements into clean, maintainable code that users love and engineers trust.",
   },
   projects: {
     title: "Featured Builds",

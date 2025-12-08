@@ -49,7 +49,7 @@ export const FloatingNav = ({
         className="border text-sm font-medium relative border-white/10 hover:border-white/20 transition-colors duration-300 text-white px-4 py-2 rounded-full"
       >
         <span>Contact me</span>
-        <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-blue-500 to-transparent h-px" />
+        <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-purple-500 to-transparent h-px" />
       </a>
     </motion.div>
   );

@@ -52,15 +52,15 @@ export default function SkillsSection() {
         <div className="relative flex h-[400px] items-center justify-center overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:top-0 before:z-10 md:h-[700px] before:bg-linear-[180deg,black_0%_10%,transparent_40%_60%,black_90%_100%] ">
           <div className="relative flex h-full w-full items-center justify-center">
             <StackCircle
-              className="absolute aspect-square w-[calc(100%-40px)] border-pink-800/40 animate-[spin_infinite_linear_30s] border-2 sm:w-[500px] md:w-[630px] lg:w-[878px] xl:w-[978px] [&>div>img]:animate-[spin_infinite_linear_reverse_30s]"
+              className="absolute aspect-square w-[calc(100%-40px)] border-neutral-800/60 animate-[spin_infinite_linear_30s] border-2 sm:w-[500px] md:w-[630px] lg:w-[878px] xl:w-[978px] [&>div>img]:animate-[spin_infinite_linear_reverse_30s]"
               logos={logosStack3}
             />
             <StackCircle
-              className="absolute aspect-square w-[calc(70%-40px)] border-purple-800/40 animate-[spin_infinite_linear_reverse_24s] border-2 sm:w-[350px] md:w-[430px] lg:w-[622px] [&>div>img]:animate-[spin_infinite_linear_24s]"
+              className="absolute aspect-square w-[calc(70%-40px)] border-neutral-800/70 animate-[spin_infinite_linear_reverse_24s] border-2 sm:w-[350px] md:w-[430px] lg:w-[622px] [&>div>img]:animate-[spin_infinite_linear_24s]"
               logos={logosStack2}
             />
             <StackCircle
-              className="absolute aspect-square w-[calc(40%-40px)] border-indigo-800/40 animate-[spin_infinite_linear_18s] border-2 sm:w-[200px] md:w-[250px] lg:w-[366px] [&>div>img]:animate-[spin_infinite_linear_reverse_18s]"
+              className="absolute aspect-square w-[calc(40%-40px)] border-neutral-800/80 animate-[spin_infinite_linear_18s] border-2 sm:w-[200px] md:w-[250px] lg:w-[366px] [&>div>img]:animate-[spin_infinite_linear_reverse_18s]"
               logos={logosStack1}
             />
             <div className="relative aspect-square w-[clamp(30px,8%,45px)] sm:w-[60px] md:w-20 lg:w-[100px]">
