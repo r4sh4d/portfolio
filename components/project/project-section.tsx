@@ -10,7 +10,7 @@ export const ProjectSection = ({
   className?: string;
 }) => (
   <section className={`space-y-2 ${className}`.trim()}>
-    <h4 className="font-semibold text-lg">{title}</h4>
+    <h3 className="font-semibold text-lg">{title}</h3>
     {children}
   </section>
 );

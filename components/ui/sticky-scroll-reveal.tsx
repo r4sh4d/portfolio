@@ -11,7 +11,7 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: React.ReactNode | string;
-    content?: React.ReactNode | any;
+    content?: React.ReactNode;
     category: string;
     role: string;
     technologies: string[];
@@ -71,7 +71,7 @@ export const StickyScroll = ({
   return (
     <motion.div
       className={cn(
-        "relative flex min-h-screen w-full justify-center lg:space-x-10 transition-colors duration-300 bg-linear-to-br py-10",
+        "relative flex min-h-screen w-full rounded-2xl justify-center lg:space-x-10 transition-[background-color,border-color] duration-500 bg-linear-to-br py-10",
         activeColor.from,
         activeColor.to,
         activeColor.text

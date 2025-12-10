@@ -8,6 +8,141 @@ import { ExperienceEntry } from "@/components/experience/experience-entry";
 import { ExperienceHighlights } from "@/components/experience/experience-highlights";
 import { ExperienceTagList } from "@/components/experience/experience-tag-list";
 import { ExperienceImpact } from "@/components/experience/experience-impact";
+import {
+  IconChartLine,
+  IconCode,
+  IconDeviceFloppy,
+  IconHierarchy3,
+  IconTargetArrow,
+} from "@tabler/icons-react";
+
+export type WorkflowItem = {
+  id: string;
+  phase: string;
+  badge: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  icon: React.ReactNode;
+  area: string;
+  accent: string;
+};
+
+export const workflows: WorkflowItem[] = [
+  {
+    id: "gather",
+    phase: "Phase 01",
+    badge: "Gather requirements",
+    title: "Audit the front-end surface",
+    description:
+      "I review the existing UI, design tokens and performance telemetry with product/design so the next iteration solves the right UX gaps without breaking the system.",
+    highlights: [
+      "Component inventory + CSS/tailwind audit for duplication or drift",
+      "Metrics + UX insights doc outlining the jobs the interface must solve",
+    ],
+    icon: <IconTargetArrow className="h-5 w-5 text-sky-400" />,
+    area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+    accent:
+      "from-sky-500/10 via-sky-500/0 to-transparent dark:from-sky-500/25 dark:via-sky-500/10 dark:to-transparent",
+  },
+  {
+    id: "plan",
+    phase: "Phase 02",
+    badge: "Plan",
+    title: "Map interface architecture",
+    description:
+      "I translate product flows into information architecture, component APIs and responsive breakpoints so the UI kit, data contracts and accessibility stories are crystal clear.",
+    highlights: [
+      "Screen flows with loading/error/empty states defined up front",
+      "Storybook tickets with props, motion specs and accessibility notes",
+    ],
+    icon: <IconHierarchy3 className="h-5 w-5 text-purple-400" />,
+    area: "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+    accent:
+      "from-purple-500/10 via-purple-500/0 to-transparent dark:from-purple-500/25 dark:via-purple-500/10 dark:to-transparent",
+  },
+  {
+    id: "implement",
+    phase: "Phase 03",
+    badge: "Implement",
+    title: "Ship production-grade slices",
+    description:
+      "I pair with backend and design to ship UI slices that include responsive states, accessibility, analytics hooks and regression tests—ready for a direct merge.",
+    highlights: [
+      "Typesafe data hooks + Suspense/loading skeletons per feature",
+      "Chromatic + Playwright runs on each PR with visual baselines",
+    ],
+    icon: <IconCode className="h-5 w-5 text-emerald-400" />,
+    area: "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/9]",
+    accent:
+      "from-emerald-500/10 via-emerald-500/0 to-transparent dark:from-emerald-500/25 dark:via-emerald-500/10 dark:to-transparent",
+  },
+  {
+    id: "optimize",
+    phase: "Phase 04",
+    badge: "Optimize",
+    title: "Optimize the experience",
+    description:
+      "Once live, I monitor Core Web Vitals, replay tooling and product analytics to prioritize UI polish, bundle tuning and experimentation that moves adoption.",
+    highlights: [
+      "Lighthouse budgets + Next.js bundle analyzer fixes each sprint",
+      "Experiment roadmap with hypotheses tied to UI interactions",
+    ],
+    icon: <IconChartLine className="h-5 w-5 text-cyan-400" />,
+    area: "md:[grid-area:2/7/3/13] xl:[grid-area:1/9/2/13]",
+    accent:
+      "from-cyan-500/10 via-cyan-500/0 to-transparent dark:from-cyan-500/25 dark:via-cyan-500/10 dark:to-transparent",
+  },
+  {
+    id: "refine",
+    phase: "Phase 05",
+    badge: "Refine & Test",
+    title: "Refine, test, hand off",
+    description:
+      "Before release I lock down edge cases, RTL/locale checks and feature flags, then create Loom walkthroughs and docs so future frontend work can build on the pattern.",
+    highlights: [
+      "Automated regression suite covering priority devices + assistive tech",
+      "Handoff kit with Storybook links, configuration docs and rollout plan",
+    ],
+    icon: <IconDeviceFloppy className="h-5 w-5 text-amber-400" />,
+    area: "md:[grid-area:3/1/4/13] xl:[grid-area:2/9/3/13]",
+    accent:
+      "from-amber-500/10 via-amber-500/0 to-transparent dark:from-amber-500/25 dark:via-amber-500/10 dark:to-transparent",
+  },
+];
+
+export type EducationDetail = {
+  school: string;
+  degree: string;
+  period: string;
+  location: string;
+  logo: string;
+  summary: string;
+  highlights: string[];
+  focus: string[];
+};
+
+export const educationDetail: EducationDetail = {
+  school: "Baku State University",
+  degree: "Bachelor of Science — Computer Science",
+  period: "2017 — 2021",
+  location: "Baku, Azerbaijan",
+  logo: "/bsu.png",
+  summary:
+    "Four-year journey grounded in fundamentals—algorithms on whiteboards, data structures in C++/C#, and hands-on practice with raw HTML/CSS/JS. Those building blocks still guide how I architect modern interfaces.",
+  highlights: [
+    "Solved 200+ algorithm problems in C++/C# across labs and contests",
+    "Led peer workshops translating pseudocode into optimized solutions",
+    "Built vanilla JS/CSS prototypes that later informed SPA architecture",
+  ],
+  focus: [
+    "Data Structures & Algorithms",
+    "C++ / C# Fundamentals",
+    "HTML / CSS / JavaScript",
+    "Object-Oriented Design",
+    "Problem-Solving Workshops",
+  ],
+};
 
 export const projects: {
   title: string;
@@ -36,8 +171,8 @@ export const projects: {
       <ProjectContainer>
         <ProjectParagraph>
           A nationwide prepaid Mastercard ecosystem built for reliability,
-          compliance, and seamless everyday payments. Designed with a strong
-          emphasis on security, performance, and user trust.
+          compliance and seamless everyday payments. Designed with a strong
+          emphasis on security, performance and user trust.
         </ProjectParagraph>
 
         <ProjectSection title="✨ Key Features">
@@ -92,7 +227,7 @@ export const projects: {
           TurboTable turns repetitive document chores into automated workflows
           powered by OCR and frontier AI models. Users describe the job in plain
           language—“Extract customer names from these invoices”—and the platform
-          assembles the steps, handles data capture, and streams results into
+          assembles the steps, handles data capture and streams results into
           spreadsheets or Supabase-backed tables.
         </ProjectParagraph>
 
@@ -114,8 +249,7 @@ export const projects: {
         <ProjectSection title="📄 Document Intelligence">
           <ProjectList>
             <li>
-              OCR pipelines for receipts, contracts, forms, and handwritten
-              notes
+              OCR pipelines for receipts, contracts, forms and handwritten notes
             </li>
             <li>
               Clean data export into structured tables without manual typing or
@@ -132,7 +266,7 @@ export const projects: {
             <li>
               Handles 10 to 10M tasks with the same flow—no additional setup
             </li>
-            <li>Analytics dashboards for workload, cost, and throughput</li>
+            <li>Analytics dashboards for workload, cost and throughput</li>
             <li>
               Enterprise controls: BYOK, on-prem deployment, dedicated AI expert
             </li>
@@ -163,7 +297,7 @@ export const projects: {
       <ProjectContainer>
         <ProjectParagraph>
           A premium social platform crafted for high‑end communities—where
-          secure communication, luxury events, and curated social experiences
+          secure communication, luxury events and curated social experiences
           come together.
         </ProjectParagraph>
 
@@ -367,7 +501,7 @@ export const projects: {
       <ProjectContainer>
         <ProjectParagraph>
           A polished, professional company website built to highlight expertise,
-          showcase projects, and drive client engagement with a clean modern
+          showcase projects and drive client engagement with a clean modern
           look.
         </ProjectParagraph>
 
@@ -410,7 +544,7 @@ export const projects: {
         <ProjectParagraph>
           A flexible CMS-based website builder that allows full customization
           through the Strapi dashboard. Supports multiple templates for company
-          sites, e-commerce platforms, and more, all optimized for performance
+          sites, e-commerce platforms and more, all optimized for performance
           and SEO.
         </ProjectParagraph>
         <ProjectSection title="🧱 Dynamic Page Sections">
@@ -457,9 +591,9 @@ export const projects: {
       <ProjectContainer>
         <ProjectParagraph>
           My current digital home—a narrative portfolio that blends motion,
-          sticky interactions, and CMS-backed sections so I can showcase new
-          work fast without redeploying. Every UI flourish you see here is built
-          in this project.
+          sticky interactions and CMS-backed sections so I can showcase new work
+          fast without redeploying. Every UI flourish you see here is built in
+          this project.
         </ProjectParagraph>
 
         <ProjectSection title="✨ Experience Highlights">
@@ -482,8 +616,8 @@ export const projects: {
         <ProjectSection title="⚙️ Under the Hood">
           <ProjectList>
             <li>
-              Next.js App Router, server actions for the contact form, and
-              smooth morphing hero animations
+              Next.js App Router, server actions for the contact form and smooth
+              morphing hero animations
             </li>
             <li>
               Tailwind + shadcn/ui + Aceternity UI for consistent components and
@@ -502,11 +636,17 @@ export const projects: {
 
 export const experiences: TimelineEntry[] = [
   {
-    title: "Jul 2025 — Present",
+    title: (
+      <span className={experienceColorVariants.charcoal.dateRange}>
+        Jul 2025 — Present
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.charcoal.markerBg,
+    markerBorderClass: experienceColorVariants.charcoal.markerBorder,
     content: (
       <ExperienceEntry
         title="Senior Frontend Developer — Fintlabs"
-        subtitle="Leading front-of-site experiences and automation tooling for Fintlabs, spanning marketing sites, CMS templates, and AI-powered workflow products."
+        subtitle="Leading front-of-site experiences and automation tooling for Fintlabs, spanning marketing sites, CMS templates and AI-powered workflow products."
       >
         <ExperienceHighlights
           title="Key Achievements & Responsibilities"
@@ -515,17 +655,17 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Portfolio Platform Leadership",
               description:
-                "Own the end-to-end experience for Fintlabs.com, shipping new case studies, SEO optimizations, and interactive sections while keeping the design system consistent with the brand.",
+                "Own the end-to-end experience for Fintlabs.com, shipping new case studies, SEO optimizations and interactive sections while keeping the design system consistent with the brand.",
             },
             {
               title: "CMS Website Builder",
               description:
-                "Extended our Strapi + Next.js website builder so internal teams can launch microsites in minutes — adding drag-and-drop sections, theme presets, and analytics hooks.",
+                "Extended our Strapi + Next.js website builder so internal teams can launch microsites in minutes — adding drag-and-drop sections, theme presets and analytics hooks.",
             },
             {
               title: "TurboTable Launch",
               description:
-                "Brought the TurboTable.ai automation product to market with a chat-first command interface, Supabase-backed storage, and enterprise-ready onboarding.",
+                "Brought the TurboTable.ai automation product to market with a chat-first command interface, Supabase-backed storage and enterprise-ready onboarding.",
             },
           ]}
         />
@@ -553,7 +693,13 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Feb 2022 — Jun 2025",
+    title: (
+      <span className={experienceColorVariants.blue.dateRange}>
+        Feb 2022 — Jun 2025
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.blue.markerBg,
+    markerBorderClass: experienceColorVariants.blue.markerBorder,
     content: (
       <ExperienceEntry
         title="Senior Frontend Developer — Peoples Group"
@@ -571,7 +717,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Feature Development & Delivery",
               description:
-                "Architected and implemented high-impact features including real-time transaction monitoring, multi-currency support, and enhanced security protocols.",
+                "Architected and implemented high-impact features including real-time transaction monitoring, multi-currency support and enhanced security protocols.",
             },
             {
               title: "Complete Product Redesign",
@@ -603,11 +749,17 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Jun 2020 — Jan 2022",
+    title: (
+      <span className={experienceColorVariants.purple.dateRange}>
+        Jun 2020 — Jan 2022
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.purple.markerBg,
+    markerBorderClass: experienceColorVariants.purple.markerBorder,
     content: (
       <ExperienceEntry
         title="Frontend Team Lead — Morpho"
-        subtitle="Managed and mentored a cross-functional frontend team while delivering enterprise solutions across CRM, logistics, fintech, and real-time communication domains."
+        subtitle="Managed and mentored a cross-functional frontend team while delivering enterprise solutions across CRM, logistics, fintech and real-time communication domains."
       >
         <ExperienceHighlights
           title="Key Achievements & Responsibilities"
@@ -616,7 +768,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Technical Leadership & Standards",
               description:
-                "Established frontend best practices, coding standards, and workflows that reduced bug rates by 45% and accelerated sprint velocity by 30%.",
+                "Established frontend best practices, coding standards and workflows that reduced bug rates by 45% and accelerated sprint velocity by 30%.",
             },
             {
               title: "Client Solutions Architecture",
@@ -626,7 +778,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Agile Development Management",
               description:
-                "Oversaw sprint planning, estimation, and code reviews across multiple projects, maintaining a 95% on-time delivery rate.",
+                "Oversaw sprint planning, estimation and code reviews across multiple projects, maintaining a 95% on-time delivery rate.",
             },
             {
               title: "Innovation & R&D",
@@ -665,7 +817,13 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Sep 2019 — Mar 2020",
+    title: (
+      <span className={experienceColorVariants.green.dateRange}>
+        Sep 2019 — Mar 2020
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.green.markerBg,
+    markerBorderClass: experienceColorVariants.green.markerBorder,
     content: (
       <ExperienceEntry
         title="Frontend Developer — THE Lobby"
@@ -683,7 +841,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Feature Engineering",
               description:
-                "Developed social networking staples including real-time feeds, user profiles, and engagement mechanics with optimized performance.",
+                "Developed social networking staples including real-time feeds, user profiles and engagement mechanics with optimized performance.",
             },
             {
               title: "Secure Messaging Integration",
@@ -724,7 +882,13 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Feb 2019 — Aug 2019",
+    title: (
+      <span className={experienceColorVariants.orange.dateRange}>
+        Feb 2019 — Aug 2019
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.orange.markerBg,
+    markerBorderClass: experienceColorVariants.orange.markerBorder,
     content: (
       <ExperienceEntry
         title="Frontend Developer — Staffy LLC"
@@ -742,7 +906,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Feature Implementation",
               description:
-                "Built HR modules for employee management, scheduling, time tracking, and analytics with real-time data sync.",
+                "Built HR modules for employee management, scheduling, time tracking and analytics with real-time data sync.",
             },
             {
               title: "State Management Architecture",
@@ -776,7 +940,13 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Oct 2018 — Jan 2019",
+    title: (
+      <span className={experienceColorVariants.pink.dateRange}>
+        Oct 2018 — Jan 2019
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.pink.markerBg,
+    markerBorderClass: experienceColorVariants.pink.markerBorder,
     content: (
       <ExperienceEntry
         title="React Native Developer — Freelance"
@@ -794,7 +964,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "E-commerce Platform",
               description:
-                "Built marketplace features—listings, cart, secure checkout, and order tracking—directly inside the chat experience.",
+                "Built marketplace features—listings, cart, secure checkout and order tracking—directly inside the chat experience.",
             },
             {
               title: "Cross-Platform Delivery",
@@ -832,7 +1002,13 @@ export const experiences: TimelineEntry[] = [
     ),
   },
   {
-    title: "Jan 2018 — Sep 2018",
+    title: (
+      <span className={experienceColorVariants.indigo.dateRange}>
+        Jan 2018 — Sep 2018
+      </span>
+    ),
+    markerBgClass: experienceColorVariants.indigo.markerBg,
+    markerBorderClass: experienceColorVariants.indigo.markerBorder,
     content: (
       <ExperienceEntry
         title="Junior Frontend Developer — Pronet LLC"
@@ -855,7 +1031,7 @@ export const experiences: TimelineEntry[] = [
             {
               title: "Technical Foundation",
               description:
-                "Built core skills in web technologies, version control, debugging, and collaborative practices that shaped future work.",
+                "Built core skills in web technologies, version control, debugging and collaborative practices that shaped future work.",
             },
           ]}
         />

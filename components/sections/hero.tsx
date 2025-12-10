@@ -1,5 +1,6 @@
 "use client";
 import { Config } from "@/config";
+import { Button } from "@/components/ui/button";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,16 +15,16 @@ export default function HeroSection() {
   ].filter((link) => Boolean(link.href));
 
   return (
-    <section className="relative isolate min-h-svh w-full flex justify-center items-center overflow-hidden bg-neutral-900 text-white pt-10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#404040,#1a1a1a_65%)]" />
-      <div className="absolute inset-x-0 -bottom-32 h-[420px] rounded-[50%] bg-linear-to-t from-neutral-800/40 via-neutral-800/30 to-transparent blur-3xl" />
+    <section className="relative isolate min-h-svh w-full flex justify-center items-center overflow-hidden bg-white text-neutral-900 dark:bg-neutral-900 dark:text-white pt-10 transition-[background-color,border-color] duration-500">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.35),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,#404040,#1a1a1a_65%)] transition-[background-color,border-color] duration-500" />
+      <div className="absolute inset-x-0 -bottom-32 h-[420px] rounded-[50%] bg-gradient-to-t from-brand-100/60 via-white/50 to-transparent blur-3xl dark:from-neutral-800/40 dark:via-neutral-800/30 dark:to-transparent transition-[background-color,border-color] duration-500" />
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl flex-col items-center justify-center gap-12 px-4 py-16 md:flex-row md:items-center md:gap-20">
         <div className="relative order-2 flex justify-center md:order-1 md:w-auto">
           <div className="group relative h-64 w-64 sm:h-72 sm:w-72">
-            <div className="absolute inset-0 rounded-full bg-linear-to-b from-neutral-700 via-neutral-800 to-neutral-900 blur-[70px]" />
-            <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-neutral-900 shadow-2xl transition-transform duration-500 group-hover:scale-105">
-              <div className="absolute inset-0 bg-linear-to-b from-neutral-700 via-neutral-800 to-neutral-900" />
+            <div className="absolute inset-0 rounded-full bg-linear-to-b from-brand-200 via-brand-100 to-white blur-[70px] dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 transition-[background-color,border-color] duration-500" />
+            <div className="relative h-full w-full overflow-hidden rounded-full border border-neutral-200 bg-white shadow-2xl transition-transform duration-500 group-hover:scale-105 dark:border-white/10 dark:bg-neutral-900">
+              <div className="absolute inset-0 bg-linear-to-b from-brand-100 via-white to-white dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 transition-[background-color,border-color] duration-500" />
               <Image
                 src="/rashad-bg.webp"
                 alt="Rashad Murshudov portrait"
@@ -36,8 +37,8 @@ export default function HeroSection() {
         </div>
 
         <div className="order-1 flex flex-1 max-w-3xl flex-col gap-6 text-center md:order-2 md:text-left">
-          <div className="flex flex-col gap-3 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-slate-200">
+          <div className="flex flex-col gap-3 text-neutral-900 dark:text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-slate-600 dark:text-slate-200">
               {hero.greeting}
             </p>
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
@@ -46,40 +47,36 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-3 text-lg font-semibold">
-            <p className="text-3xl sm:text-4xl [&_path]:stroke-purple-300 whitespace-pre-line">
+            <p className="text-3xl sm:text-4xl [&_path]:stroke-brand-300 whitespace-pre-line">
               a&nbsp;&nbsp;
               <RoughNotation type="box" show animationDuration={1000}>
-                <span className="text-purple-400">{heroRole}.</span>
+                <span className="text-brand-500">{heroRole}.</span>
               </RoughNotation>
             </p>
-            <p className="text-base font-normal text-neutral-200 mt-8 [&_path]:stroke-purple-300">
-              Currently building thoughtful digital experiences with{" "}
+            <div className="flex flex-col mt-8 items-center md:items-start [&_path]:stroke-brand-300">
+              <p className="text-base font-normal text-neutral-600 dark:text-neutral-200 max-w-90 md:max-w-none">
+                Currently building thoughtful digital experiences with
+              </p>
               <RoughNotation type="underline" show animationDelay={1000}>
-                <span className="font-semibold text-purple-300">
+                <span className="font-semibold text-brand-500 dark:text-brand-200 text-base">
                   React, Next.js & React Native.
                 </span>
               </RoughNotation>
-            </p>
+            </div>
           </div>
 
-          <p className="text-base leading-relaxed text-neutral-200">
+          <p className="text-base leading-relaxed text-neutral-700 dark:text-neutral-200">
             {hero.description}
           </p>
 
           <div className="mt-4 flex w-full flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-              <Link
-                href="#projects"
-                className="rounded-full bg-purple-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-purple-600"
-              >
-                See my works
-              </Link>
-              <Link
-                href="#contact"
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white/40"
-              >
-                Contact me
-              </Link>
+              <Button asChild variant="primary">
+                <Link href="#projects">See my works</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="#contact">Contact me</Link>
+              </Button>
             </div>
 
             {socials.length > 0 && (
@@ -90,7 +87,7 @@ export default function HeroSection() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-white/70 transition hover:text-purple-300"
+                    className="text-neutral-500 dark:text-white/70 transition hover:text-brand-500 dark:hover:text-brand-200"
                     aria-label={label}
                   >
                     <Icon size={28} stroke={1.5} />

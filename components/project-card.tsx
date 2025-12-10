@@ -32,7 +32,7 @@ export function ProjectCard({
           proximity={20}
           inactiveZone={0}
         />
-        <CardItem translateZ="100" className="w-full">
+        <CardItem translateZ={100} className="w-full">
           <Image
             src={thumbnail}
             height="1000"

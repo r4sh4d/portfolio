@@ -16,7 +16,7 @@ export const handleContact = async (
   if (!email || !subject || !body) {
     return {
       success: false,
-      message: "Email, subject, and message are required.",
+      message: "Email, subject and message are required.",
     };
   }
 

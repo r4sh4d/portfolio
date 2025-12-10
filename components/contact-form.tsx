@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { ContactFormState, handleContact } from "@/services/contact";
 import { IconBrandGithub, IconBrandLinkedin, IconX } from "@tabler/icons-react";
 import React, { useActionState, useRef, useState } from "react";
-import { GlowingEffect } from "./ui/glowing-effect";
 import { TextArea } from "./ui/textarea";
 
 export default function ContactForm({
@@ -30,19 +29,11 @@ export default function ContactForm({
   return (
     <div
       className={cn(
-        "relative shadow-input mx-auto w-full max-w-md bg-white rounded-2xl dark:bg-black p-4 z-60",
+        "relative mx-auto w-full max-w-md bg-white rounded-2xl dark:bg-black p-4 z-60 shadow-lg",
         className
       )}
       {...props}
     >
-      <GlowingEffect
-        borderWidth={2}
-        spread={20}
-        glow={true}
-        disabled={false}
-        proximity={20}
-        inactiveZone={0}
-      />
       <form action={formAction} ref={formRef}>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email</Label>
