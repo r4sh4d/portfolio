@@ -473,7 +473,7 @@ export const projects: Project[] = [
   },
   {
     slug: "rashad-dev",
-    name: "Personal Portfolio",
+    name: "Rashad’s Portfolio",
     tagline: "Rashad.dev",
     link: "https://rashad.dev",
     thumbnail: "/portfolio.webp",
