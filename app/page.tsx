@@ -1,46 +1,23 @@
-"use client";
+import { About } from "@/components/sections/about";
+import { Capabilities } from "@/components/sections/capabilities";
+import { Contact } from "@/components/sections/contact";
+import { Experience } from "@/components/sections/experience";
+import { Hero } from "@/components/sections/hero";
+import { Process } from "@/components/sections/process";
+import { StackIndex } from "@/components/sections/stack-index";
+import { Work } from "@/components/sections/work";
 
-import EducationsSection from "@/components/sections/educations";
-import ExperiencesSection from "@/components/sections/experiences";
-import HeroSection from "@/components/sections/hero";
-import ProjectsSection from "@/components/sections/projects";
-import SkillsSection from "@/components/sections/skills";
-import ContactSection from "@/components/sections/contact";
-import WorkflowSection from "@/components/sections/workflow";
-
-export default function Portfolio() {
+export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-background text-foreground transition-[background-color,border-color] duration-500">
-      <HeroSection />
-
-      <div id="experiences" className="bg-neutral-950">
-        <ExperiencesSection />
-      </div>
-
-      <div id="workflow">
-        <WorkflowSection />
-      </div>
-
-      <div id="projects">
-        <ProjectsSection />
-      </div>
-
-      <div id="education" className="">
-        <EducationsSection />
-      </div>
-
-      <div id="skills">
-        <SkillsSection />
-      </div>
-
-      {/* 
-      <div id="about">
-        <AboutSection />
-      </div> */}
-
-      <div id="contact">
-        <ContactSection />
-      </div>
-    </div>
+    <>
+      <Hero />
+      <Work />
+      <StackIndex />
+      <About />
+      <Experience />
+      <Process />
+      <Capabilities />
+      <Contact />
+    </>
   );
 }
