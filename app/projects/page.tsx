@@ -1,49 +1,44 @@
-"use client";
-
-import { ProjectCard } from "@/components/project-card";
-import { SectionTitle } from "@/components/section-title";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { Config } from "@/config";
 import { projects } from "@/data";
+import { pad } from "@/lib/content";
+import { SplitWords } from "@/components/motion/split-words";
+import { ProjectList } from "@/components/project/project-list";
 
-const content = projects.map((project) => ({
-  title: project.title,
-  description: project.description,
-  color: project.color,
-  category: project.category,
-  role: project.role,
-  technologies: project.technologies,
-  highlights: project.highlights,
-  content: (
-    <ProjectCard
-      thumbnail={project.thumbnail}
-      className="w-full"
-      href={project.link}
-      containerClassName={`bg-${project.color} py-0`}
-    />
-  ),
-}));
+export const metadata: Metadata = {
+  title: `Projects — ${Config.name}`,
+  description: Config.projects.description,
+};
 
 export default function ProjectsPage() {
-  const { projects: projectsConfig } = Config;
-
   return (
-    <section className="relative bg-gradient-to-b from-white via-brand-50 to-white pt-10 dark:from-neutral-950 dark:via-[#170a24] dark:to-neutral-900 transition-[background-color,border-color] duration-500">
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.15),transparent_60%)] dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.15),transparent_60%)]" />
-        <div className="absolute inset-x-1/4 top-0 h-64 bg-[radial-gradient(circle,rgba(167,139,250,0.3),transparent_60%)] blur-3xl dark:bg-[radial-gradient(circle,rgba(148,134,255,0.25),transparent_60%)]" />
+    <section className="frame pb-32 pt-28 md:pb-48 md:pt-36">
+      <div
+        className="animate-fade type-label flex items-center justify-between border-t border-line pt-4 text-muted"
+        style={{ "--delay": "400ms" } as CSSProperties}
+      >
+        <p>
+          <span className="text-accent">(—)</span>
+          <span className="ml-3">All projects</span>
+        </p>
+        <p>{pad(projects.length)} entries</p>
       </div>
 
-      <div className="relative z-10 flex w-full flex-col px-4 py-24">
-        <SectionTitle className="mb-8 text-neutral-900 dark:text-white drop-shadow-sm dark:drop-shadow">
-          {projectsConfig.title}
-        </SectionTitle>
-        <p className="mx-auto max-w-3xl px-2 text-center text-lg text-neutral-600 dark:text-slate-200">
-          {projectsConfig.description}
+      <div className="grid-12 mt-12 gap-y-8 md:mt-20">
+        <h1 className="animate-words type-hero col-span-4 text-[clamp(3.25rem,12vw,13rem)] md:col-span-12">
+          <SplitWords text={Config.index.title} />
+        </h1>
+        <p
+          className="animate-fade col-span-4 max-w-md text-muted md:col-span-4 md:col-start-9"
+          style={{ "--delay": "500ms" } as CSSProperties}
+        >
+          {Config.projects.description}
         </p>
       </div>
-      <div className="relative z-10">
-        <StickyScroll content={content} />
+
+      <div className="mt-20 md:mt-28">
+        <ProjectList />
       </div>
     </section>
   );
