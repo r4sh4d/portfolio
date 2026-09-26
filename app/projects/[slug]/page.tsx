@@ -5,7 +5,13 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { Config } from "@/config";
 import { projects, type ProjectSection } from "@/data";
-import { getProject, hostOf, pad, projectNumber } from "@/lib/content";
+import {
+  getProject,
+  hostOf,
+  pad,
+  projectNumber,
+  tintStyle,
+} from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Reveal } from "@/components/motion/reveal";
@@ -40,7 +46,7 @@ function Label({
 }) {
   return (
     <p className="type-label text-muted">
-      <span className="text-accent">({pad(index)})</span>
+      <span className="text-tint">({pad(index)})</span>
       <span className="ml-3">{children}</span>
     </p>
   );
@@ -117,8 +123,17 @@ export default async function CaseStudy({ params }: Props) {
   const next = projects[(position + 1) % projects.length];
 
   return (
-    <article>
-      <header className="frame pt-28 md:pt-36">
+    <article className="relative" style={tintStyle(project)}>
+      {/* A faint wash of the project's brand colour behind the title. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[90svh]"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 60% at 12% 0%, color-mix(in oklab, var(--tint) 20%, transparent), transparent 70%)",
+        }}
+      />
+      <header className="frame relative pt-28 md:pt-36">
         <div
           className="animate-fade type-label flex items-center justify-between border-t border-line pt-4 text-muted"
           style={{ "--delay": "500ms" } as CSSProperties}
@@ -175,7 +190,7 @@ export default async function CaseStudy({ params }: Props) {
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-1.5 text-fg transition-colors hover:text-accent"
+                className="group inline-flex items-center gap-1.5 text-fg transition-colors hover:text-tint"
               >
                 {hostOf(project.link)}
                 <ArrowSwap />
@@ -216,7 +231,7 @@ export default async function CaseStudy({ params }: Props) {
               delay={index * 100}
               className="border-b border-line py-8 md:border-b-0 md:border-l md:px-6 md:py-10 md:first:border-l-0 md:first:pl-0"
             >
-              <span className="type-label text-accent">{pad(index + 1)}</span>
+              <span className="type-label text-tint">{pad(index + 1)}</span>
               <p className="type-heading mt-8 max-w-[18ch]">{highlight}</p>
             </Reveal>
           ))}
@@ -275,7 +290,7 @@ export default async function CaseStudy({ params }: Props) {
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              className="type-label group mt-6 inline-flex items-center gap-3 rounded-full bg-fg px-7 py-4 text-bg transition-colors duration-300 hover:bg-accent"
+              className="type-label group mt-6 inline-flex items-center gap-3 rounded-full bg-fg px-7 py-4 text-bg transition-colors duration-300 hover:bg-tint"
             >
               Visit {hostOf(project.link)}
               <ArrowSwap />
@@ -290,6 +305,7 @@ export default async function CaseStudy({ params }: Props) {
       >
         <Link
           href={`/projects/${next.slug}`}
+          style={tintStyle(next)}
           data-cursor="Next"
           className="group frame relative block overflow-hidden py-16 md:py-28"
         >
@@ -299,7 +315,7 @@ export default async function CaseStudy({ params }: Props) {
               {projectNumber(next)} / {pad(projects.length)}
             </span>
           </p>
-          <p className="type-display relative z-10 mt-10 transition-transform duration-700 ease-out-expo group-hover:translate-x-4 md:mt-14">
+          <p className="type-display relative z-10 mt-10 transition-[translate,color] duration-700 ease-out-expo group-hover:translate-x-4 group-hover:text-tint md:mt-14">
             {next.name}
           </p>
           <p className="type-heading relative z-10 mt-4 text-muted">

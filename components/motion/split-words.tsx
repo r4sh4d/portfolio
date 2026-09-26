@@ -14,9 +14,7 @@ export function SplitWords({ text }: { text: string }) {
         {words.map((word, index) => (
           <span key={index}>
             <span className="word">
-              <span style={{ "--i": index } as CSSProperties}>
-                {word}
-              </span>
+              <span style={{ "--i": index } as CSSProperties}>{word}</span>
             </span>
             {index < words.length - 1 && " "}
           </span>

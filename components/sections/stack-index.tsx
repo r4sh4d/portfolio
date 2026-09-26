@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Config } from "@/config";
 import { projects } from "@/data";
-import { buildStackIndex, pad } from "@/lib/content";
+import { buildStackIndex, pad, tintStyle } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { Reveal } from "../motion/reveal";
 import { SectionHeader } from "../section-header";
@@ -111,6 +111,11 @@ export function StackIndex() {
           ref={mapRef}
           onPointerLeave={() => setFocus(null)}
           className="relative grid-12 items-center gap-y-16"
+          style={
+            focus?.kind === "project"
+              ? tintStyle(projects[focus.index])
+              : undefined
+          }
         >
           {/* Wires (desktop only) */}
           <svg
@@ -123,10 +128,15 @@ export function StackIndex() {
                 d={wire.d}
                 pathLength={1}
                 fill="none"
-                style={{ "--i": index } as CSSProperties}
+                style={
+                  {
+                    "--i": index,
+                    ...tintStyle(projects[wire.project]),
+                  } as CSSProperties
+                }
                 className={cn(
                   wireLit(wire)
-                    ? "stroke-accent [stroke-opacity:1]"
+                    ? "stroke-tint [stroke-opacity:1]"
                     : cn(
                         "stroke-fg",
                         focus
@@ -141,7 +151,11 @@ export function StackIndex() {
 
           <ol className="relative col-span-4 border-t border-line lg:col-span-5">
             {projects.map((project, index) => (
-              <li key={project.slug} className="border-b border-line">
+              <li
+                key={project.slug}
+                className="border-b border-line"
+                style={tintStyle(project)}
+              >
                 <Link
                   href={`/projects/${project.slug}`}
                   data-cursor="Open"
@@ -157,7 +171,12 @@ export function StackIndex() {
                     {pad(index + 1)}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="type-heading block transition-transform duration-500 ease-out-expo group-hover:translate-x-2 group-focus-visible:translate-x-2">
+                    <span
+                      className={cn(
+                        "type-heading block transition-[translate,color] duration-500 ease-out-expo group-hover:translate-x-2 group-focus-visible:translate-x-2",
+                        focus && projectLit(index) && "text-tint"
+                      )}
+                    >
                       {project.name}
                     </span>
                     <span
@@ -178,7 +197,7 @@ export function StackIndex() {
                     className={cn(
                       "hidden size-1.5 shrink-0 rounded-full transition-colors duration-500 lg:block",
                       focus?.kind === "project" && focus.index === index
-                        ? "bg-accent"
+                        ? "bg-tint"
                         : "bg-line-strong"
                     )}
                   />
@@ -224,9 +243,7 @@ export function StackIndex() {
                         aria-hidden="true"
                         className={cn(
                           "hidden size-1.5 shrink-0 rounded-full transition-colors duration-500 lg:block",
-                          focus && techLit(index)
-                            ? "bg-accent"
-                            : "bg-line-strong"
+                          focus && techLit(index) ? "bg-tint" : "bg-line-strong"
                         )}
                       />
                       <span className="flex-1 text-[0.9375rem] lg:text-[1.0625rem]">
@@ -248,7 +265,7 @@ export function StackIndex() {
 
           <div className="type-label col-span-4 flex items-center justify-between gap-6 border-t border-line pt-4 text-muted lg:col-span-12">
             <p aria-hidden="true" className="hidden lg:block">
-              <span className="text-accent">→</span> {readout}
+              <span className="text-tint">→</span> {readout}
             </p>
             <Link
               href="/projects"

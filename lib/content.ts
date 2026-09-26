@@ -1,4 +1,5 @@
-import { experiences, projects, type Project } from "@/data";
+import type { CSSProperties } from "react";
+import { experiences, projects, projectTints, type Project } from "@/data";
 
 export const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -8,6 +9,10 @@ export const getProject = (slug: string) =>
 /** Two-digit position of a project in the portfolio, e.g. "03". */
 export const projectNumber = (project: Project) =>
   pad(projects.indexOf(project) + 1);
+
+/** Scopes a project's brand colour to an element (read by `*-tint` utilities). */
+export const tintStyle = (project: Project) =>
+  ({ "--tint": projectTints[project.color] }) as CSSProperties;
 
 export const hostOf = (url: string) => new URL(url).host.replace(/^www\./, "");
 
