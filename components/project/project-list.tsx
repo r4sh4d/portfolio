@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "@/data";
-import { pad } from "@/lib/content";
+import { pad, tintStyle } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { ArrowSwap } from "../ui/arrow-swap";
 
@@ -57,7 +57,11 @@ export function ProjectList() {
         onPointerLeave={() => setActive(null)}
       >
         {projects.map((project, index) => (
-          <li key={project.slug} className="border-b border-line">
+          <li
+            key={project.slug}
+            className="border-b border-line"
+            style={tintStyle(project)}
+          >
             <Link
               href={`/projects/${project.slug}`}
               onPointerEnter={() => setActive(index)}
@@ -81,7 +85,7 @@ export function ProjectList() {
                 {pad(index + 1)}
               </span>
               <span className="col-span-3 md:col-span-5">
-                <span className="block font-display text-[clamp(2rem,4.6vw,4.75rem)] font-medium leading-[0.95] tracking-[-0.045em] transition-transform duration-700 ease-out-expo group-hover:translate-x-3">
+                <span className="block font-display text-[clamp(2rem,4.6vw,4.75rem)] font-medium leading-[0.95] tracking-[-0.045em] transition-[translate,color] duration-700 ease-out-expo group-hover:translate-x-3 group-hover:text-tint">
                   {project.name}
                 </span>
                 {project.tagline && (

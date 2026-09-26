@@ -17,9 +17,7 @@ export function ProjectTitle({
 }) {
   return (
     <div className={className}>
-      <p className="type-label text-accent">
-        Project / {projectNumber(project)}
-      </p>
+      <p className="type-label text-tint">Project / {projectNumber(project)}</p>
       <Reveal
         as="h3"
         variant="words"
@@ -75,7 +73,7 @@ export function ProjectHighlights({
     <ul className={cn("grid gap-2 text-fg", className)}>
       {project.highlights.map((highlight) => (
         <li key={highlight} className="flex gap-3">
-          <span aria-hidden="true" className="text-accent">
+          <span aria-hidden="true" className="text-tint">
             +
           </span>
           {highlight}
@@ -96,7 +94,7 @@ export function ProjectLinks({
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
       <Link
         href={`/projects/${project.slug}`}
-        className="type-label group inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3.5 text-bg transition-colors duration-300 hover:bg-accent"
+        className="type-label group inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3.5 text-bg transition-colors duration-300 hover:bg-tint"
       >
         Case study<span className="sr-only">: {project.name}</span>
         <ArrowSwap direction="right" />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Config } from "@/config";
 import { projects, type Project } from "@/data";
-import { pad, projectNumber } from "@/lib/content";
+import { pad, projectNumber, tintStyle } from "@/lib/content";
 import { Reveal } from "../motion/reveal";
 import { SplitWords } from "../motion/split-words";
 import {
@@ -20,7 +20,7 @@ const FEATURED_COUNT = 4;
 /** Full-bleed image between a title row and a metadata row. */
 function Cinematic({ project }: { project: Project }) {
   return (
-    <article className="group">
+    <article className="group" style={tintStyle(project)}>
       <div className="frame grid-12 items-end gap-y-6">
         <ProjectTitle project={project} className="col-span-4 md:col-span-7" />
         <Reveal
@@ -62,7 +62,10 @@ function Cinematic({ project }: { project: Project }) {
 /** Information pinned beside a tall, tinted stage. */
 function Pinned({ project }: { project: Project }) {
   return (
-    <article className="group frame grid-12 gap-y-10">
+    <article
+      className="group frame grid-12 gap-y-10"
+      style={tintStyle(project)}
+    >
       <div className="col-span-4 md:col-span-5 lg:col-span-4">
         <div className="flex flex-col gap-8 md:sticky md:top-28">
           <ProjectTitle project={project} />
@@ -96,7 +99,7 @@ function Pinned({ project }: { project: Project }) {
 /** Oversized title laid across the top edge of the image. */
 function Layered({ project }: { project: Project }) {
   return (
-    <article className="group">
+    <article className="group" style={tintStyle(project)}>
       <div className="relative">
         <MediaLink project={project} className="frame">
           <ProjectMedia
@@ -117,7 +120,7 @@ function Layered({ project }: { project: Project }) {
 
       <div className="frame grid-12 mt-10 gap-y-8">
         <div className="col-span-4 md:col-span-5">
-          <p className="type-label text-accent">
+          <p className="type-label text-tint">
             Project / {projectNumber(project)}
           </p>
           {project.tagline && (
@@ -143,7 +146,10 @@ function Layered({ project }: { project: Project }) {
 /** Image pans sideways as the page scrolls; details sit opposite. */
 function Drift({ project }: { project: Project }) {
   return (
-    <article className="group frame grid-12 items-center gap-y-10">
+    <article
+      className="group frame grid-12 items-center gap-y-10"
+      style={tintStyle(project)}
+    >
       <MediaLink project={project} className="col-span-4 md:col-span-7">
         <ProjectMedia
           project={project}

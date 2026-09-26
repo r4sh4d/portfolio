@@ -19,6 +19,13 @@
 }
 
 @theme inline {
+  /* The brand colour of the project in scope (set via `--tint`), lifted for
+     legibility on the dark background. Falls back to the site accent. */
+  --color-tint: color-mix(
+    in oklab,
+    var(--tint, var(--color-accent)) 68%,
+    var(--color-fg)
+  );
   --font-display:
     var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;

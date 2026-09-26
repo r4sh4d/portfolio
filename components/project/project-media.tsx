@@ -71,7 +71,7 @@ export function ProjectMedia({
       style={
         {
           "--tint": projectTints[project.color],
-          backgroundColor: "color-mix(in oklab, var(--tint) 14%, #121211)",
+          backgroundColor: "color-mix(in oklab, var(--tint) 22%, #121211)",
         } as CSSProperties
       }
     >

@@ -165,7 +165,7 @@ export function Hero() {
 
       <m.div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -ml-[35vmax] -mt-[35vmax] size-[70vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.78_0.12_295/0.08),transparent)]"
+        className="pointer-events-none absolute left-1/2 top-1/2 -ml-[35vmax] -mt-[35vmax] size-[70vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.78_0.12_295/0.12),transparent)]"
         style={{ x: glowX, y: glowY }}
       />
 
